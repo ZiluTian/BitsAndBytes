@@ -94,7 +94,9 @@ speedup that changes the answer isn't a speedup, it's a regression.
 | **Fused quantize/dequantize kernel (opt-in)** — one elementwise kernel instead of ~7 per q/dq pair; bit-exact by construction (power-of-two scale, single +0.5 rounding) | every forward | 16 m 09 s → 14 m 12 s |
 
 Because every change is AP-invariant, the speedup carries no accuracy cost — and, checked directly, the
-keep/revert decisions and every ladder verdict are unchanged.
+keep/revert decisions and every ladder verdict are unchanged. The implementation of these — the fused Q/DQ kernel
+and the rest of the bit-exact compiler-side co-design changes, with per-forward budgets and invariants — is the
+subject of [Fusing the Q/DQ chain, and other bit-exact compiler-side co-design wins](qdq-fusion-and-codesign.md).
 
 ## The numbers
 
