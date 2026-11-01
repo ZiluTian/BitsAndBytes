@@ -1,6 +1,7 @@
 # BitsAndBytes
 
-Technical notes and traces.
+Random bits and bytes that I find interesting to document — technical notes
+and source-level code traces.
 
 ## Docs
 
